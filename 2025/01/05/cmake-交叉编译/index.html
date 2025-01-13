@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   
   
-  <title>cmake 交叉编译 | Hexo</title>
+  <title>CMake 交叉编译实践：国产CPU，支持 aarch64、loongarch64 和 mips64 架构 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="cmake交叉编译，支持aarch64、loongarch64、mips64背景在当今科技飞速发展的时代，国产芯片的崛起备受瞩目。随着不同架构的国产芯片相继涌现，如支持 aarch64 的鲲鹏芯片、适配 loongarch64 的龙芯芯片以及采用 mips64 架构的部分芯片等，如何让软件能够在这些多样的芯片环境下顺畅运行成为了关键课题。 为什么要交叉编译 开发便利性与效率提升  在开发过程中，使">
+  <meta name="description" content="CMake 交叉编译实践背景在当今科技飞速发展的时代，国产芯片的崛起备受瞩目。随着不同架构的国产芯片相继涌现，如支持 aarch64 的鲲鹏芯片、适配 loongarch64 的龙芯芯片以及采用 mips64 架构的部分芯片等，如何让软件能够在这些多样的芯片环境下顺畅运行成为了关键课题。 为什么要交叉编译 开发便利性与效率提升  在开发过程中，使用熟悉的主机操作系统（如常见的 Windows、Li">
 <meta property="og:type" content="article">
-<meta property="og:title" content="cmake 交叉编译">
+<meta property="og:title" content="CMake 交叉编译实践：国产CPU，支持 aarch64、loongarch64 和 mips64 架构">
 <meta property="og:url" content="http://example.com/2025/01/05/cmake-%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="cmake交叉编译，支持aarch64、loongarch64、mips64背景在当今科技飞速发展的时代，国产芯片的崛起备受瞩目。随着不同架构的国产芯片相继涌现，如支持 aarch64 的鲲鹏芯片、适配 loongarch64 的龙芯芯片以及采用 mips64 架构的部分芯片等，如何让软件能够在这些多样的芯片环境下顺畅运行成为了关键课题。 为什么要交叉编译 开发便利性与效率提升  在开发过程中，使">
+<meta property="og:description" content="CMake 交叉编译实践背景在当今科技飞速发展的时代，国产芯片的崛起备受瞩目。随着不同架构的国产芯片相继涌现，如支持 aarch64 的鲲鹏芯片、适配 loongarch64 的龙芯芯片以及采用 mips64 架构的部分芯片等，如何让软件能够在这些多样的芯片环境下顺畅运行成为了关键课题。 为什么要交叉编译 开发便利性与效率提升  在开发过程中，使用熟悉的主机操作系统（如常见的 Windows、Li">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/build-aarch64.png">
 <meta property="og:image" content="http://example.com/images/build-loongarch64.png">
@@ -20,8 +20,11 @@
 <meta property="og:image" content="http://example.com/images/test-loongarch64.png">
 <meta property="og:image" content="http://example.com/images/test-mips64.png">
 <meta property="article:published_time" content="2025-01-05T09:01:39.000Z">
-<meta property="article:modified_time" content="2025-01-05T16:55:13.825Z">
+<meta property="article:modified_time" content="2025-01-13T15:59:26.971Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="cmake">
+<meta property="article:tag" content="交叉编译">
+<meta property="article:tag" content="国产芯片">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/build-aarch64.png">
   
@@ -92,7 +95,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      cmake 交叉编译
+      CMake 交叉编译实践：国产CPU，支持 aarch64、loongarch64 和 mips64 架构
     </h1>
   
 
@@ -100,7 +103,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="cmake交叉编译，支持aarch64、loongarch64、mips64"><a href="#cmake交叉编译，支持aarch64、loongarch64、mips64" class="headerlink" title="cmake交叉编译，支持aarch64、loongarch64、mips64"></a>cmake交叉编译，支持aarch64、loongarch64、mips64</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在当今科技飞速发展的时代，国产芯片的崛起备受瞩目。随着不同架构的国产芯片相继涌现，如支持 aarch64 的鲲鹏芯片、适配 loongarch64 的龙芯芯片以及采用 mips64 架构的部分芯片等，如何让软件能够在这些多样的芯片环境下顺畅运行成为了关键课题。</p>
+        <h1 id="CMake-交叉编译实践"><a href="#CMake-交叉编译实践" class="headerlink" title="CMake 交叉编译实践"></a>CMake 交叉编译实践</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在当今科技飞速发展的时代，国产芯片的崛起备受瞩目。随着不同架构的国产芯片相继涌现，如支持 aarch64 的鲲鹏芯片、适配 loongarch64 的龙芯芯片以及采用 mips64 架构的部分芯片等，如何让软件能够在这些多样的芯片环境下顺畅运行成为了关键课题。</p>
 <h2 id="为什么要交叉编译"><a href="#为什么要交叉编译" class="headerlink" title="为什么要交叉编译"></a>为什么要交叉编译</h2><ul>
 <li>开发便利性与效率提升</li>
 </ul>
@@ -111,74 +114,86 @@
 <p>随着国产芯片架构的多样化发展，一款软件常常需要适配多种不同架构的芯片，以满足不同应用场景需求。交叉编译技术使得开发者能够在单一主机平台上，针对不同目标架构轻松切换编译配置，快速生成适配不同芯片的软件版本，避免为每个目标平台单独搭建复杂的本地编译环境，实现一套代码多平台复用，降低开发成本与维护难度。</p>
 <h2 id="交叉编译原理"><a href="#交叉编译原理" class="headerlink" title="交叉编译原理"></a>交叉编译原理</h2><p>交叉编译，简单来说，就是在一个平台（通常称为主机平台，如常见的 x86 架构 PC）上编译生成可在另一个不同的架构平台（目标平台，如上述的国产芯片架构）上运行的代码。这背后的核心原理在于编译器的 “魔法”。编译器本身是一个将高级编程语言转换为机器可识别二进制指令的工具，在交叉编译场景下，它能够模拟目标平台的指令集、系统调用等关键特性。</p>
 <h2 id="交叉编译工具链"><a href="#交叉编译工具链" class="headerlink" title="交叉编译工具链"></a>交叉编译工具链</h2><p>交叉编译工具链，也叫交叉编译器，是专门为交叉编译而设的工具链，它提供了编译器、链接器、库等工具，用于在主机平台上编译生成目标平台的可执行文件。</p>
-<h2 id="实操部分"><a href="#实操部分" class="headerlink" title="实操部分"></a>实操部分</h2><ol>
+<h2 id="实操指南"><a href="#实操指南" class="headerlink" title="实操指南"></a>实操指南</h2><ol>
 <li>克隆cmake工程</li>
 </ol>
-<p>这里将各个架构的工具链融入cmake工程，并编写了构建脚本。<br>工程地址：<a target="_blank" rel="noopener" href="https://github.com/jaywong001011/cmake_template.git">https://github.com/jaywong001011/cmake_template.git</a></p>
+<p>本项目整合了多种架构的工具链，并提供了自动化构建脚本。你可以从以下地址克隆工程：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/jaywong001011/cmake_template.git">GitHub: cmake_template</a></p>
 <ol start="2">
 <li>交叉编译工具链下载</li>
 </ol>
-<p>在linux下，交叉编译工具链可以使用yum、apt等包管理器下载，这里使用网上编译好的，可自行选择需要的版本。</p>
-<ul>
-<li>aarch64 交叉编译工具链使用linaro的，这里使用gcc5.4的版本。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ wget https://releases.linaro.org/components/toolchain/binaries/5.4-2017.05/aarch64-linux-gnu/gcc-linaro-5.4.1-2017.05-x86_64_aarch64-linux-gnu.tar.xz</span><br><span class="line">$ tar -xf gcc-linaro-5.4.1-2017.05-x86_64_aarch64-linux-gnu.tar.xz -C /opt/</span><br></pre></td></tr></table></figure>
-<ul>
-<li>loongarch64 交叉编译工具链使用龙芯github的构建工具。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ wget https://github.com/loongson/build-tools/releases/download/2024.11.01/x86_64-cross-tools-loongarch64-binutils_2.43.1-gcc_14.2.0-glibc_2.40.tar.xz</span><br><span class="line">$ tar -xf x86_64-cross-tools-loongarch64-binutils_2.43.1-gcc_14.2.0-glibc_2.40.tar.xz -C /opt/</span><br><span class="line">$ <span class="built_in">mv</span> /opt/cross-tools/ /opt/x86_64-cross-tools-loongarch64-binutils_2.43.1-gcc_14.2.0-glibc_2.40/</span><br></pre></td></tr></table></figure>
-<ul>
-<li>mips64 交叉编译工具链使用龙芯的构建工具。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ wget http://ftp.loongnix.cn/toolchain/gcc/release/mips/gcc7/mips-loongson-gcc7.3-2019.06-29-linux-gnu.tar.gz</span><br><span class="line">$ tar -xf mips-loongson-gcc7.3-2019.06-29-linux-gnu.tar.gz -C /opt/</span><br></pre></td></tr></table></figure>
+<p>对于 Linux 系统，可以通过包管理器安装或下载预编译好的工具链。以下是各架构推荐的工具链版本及其安装命令：</p>
+<h4 id="AArch64-架构"><a href="#AArch64-架构" class="headerlink" title="AArch64 架构"></a>AArch64 架构</h4><p>使用 Linaro 提供的 GCC 5.4 版本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://releases.linaro.org/components/toolchain/binaries/5.4-2017.05/aarch64-linux-gnu/gcc-linaro-5.4.1-2017.05-x86_64_aarch64-linux-gnu.tar.xz</span><br><span class="line">tar -xf gcc-linaro-5.4.1-2017.05-x86_64_aarch64-linux-gnu.tar.xz -C /opt/</span><br></pre></td></tr></table></figure>
+
+<h4 id="LoongArch64-架构"><a href="#LoongArch64-架构" class="headerlink" title="LoongArch64 架构"></a>LoongArch64 架构</h4><p>使用龙芯提供的工具链：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/loongson/build-tools/releases/download/2024.11.01/x86_64-cross-tools-loongarch64-binutils_2.43.1-gcc_14.2.0-glibc_2.40.tar.xz</span><br><span class="line">tar -xf x86_64-cross-tools-loongarch64-binutils_2.43.1-gcc_14.2.0-glibc_2.40.tar.xz -C /opt/</span><br><span class="line"><span class="built_in">mv</span> /opt/cross-tools/ /opt/x86_64-cross-tools-loongarch64-binutils_2.43.1-gcc_14.2.0-glibc_2.40/</span><br></pre></td></tr></table></figure>
+<h4 id="MIPS64-架构"><a href="#MIPS64-架构" class="headerlink" title="MIPS64 架构"></a>MIPS64 架构</h4><p>同样来自龙芯的工具链：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget http://ftp.loongnix.cn/toolchain/gcc/release/mips/gcc7/mips-loongson-gcc7.3-2019.06-29-linux-gnu.tar.gz</span><br><span class="line">tar -xf mips-loongson-gcc7.3-2019.06-29-linux-gnu.tar.gz -C /opt/</span><br></pre></td></tr></table></figure>
 
 <ol start="3">
-<li><p>配置交叉编译工具链环境变量。<br>各个架构的工具链已经配置好了，<br><a target="_blank" rel="noopener" href="https://github.com/jaywong001011/cmake_template/tree/main/toolchains">https://github.com/jaywong001011/cmake_template/tree/main/toolchains</a></p>
-</li>
-<li><p>编译</p>
-</li>
+<li>配置环境变量</li>
 </ol>
+<p>在交叉编译过程中，需要配置一些环境变量来告诉 CMake 使用正确的工具链和目标平台信息。以下是详细的配置说明：</p>
+<ul>
+<li>CMAKE_SYSTEM_NAME：指定目标系统的名称。这里设置为 Linux，表示目标系统是 Linux。</li>
+<li>CMAKE_SYSTEM_PROCESSOR：指定目标系统的处理器架构。这里设置为 aarch64，表示目标处理器架构是 aarch64。对于其他架构，可以相应地设置为 loongarch64 或 mips64。</li>
+<li>CMAKE_SYSROOT：指定目标系统的根目录。这个目录包含了目标系统的头文件、库文件等。这里使用环境变量 $ENV{CROSS_COMPILE_SYSROOT} 来指定。</li>
+<li>CMAKE_C_COMPILER：指定 C 编译器的路径。这里使用环境变量 $ENV{CROSS_COMPILE_ROOT} 和 $ENV{CROSS_COMPILE} 来构建完整的路径，例如 &#x2F;opt&#x2F;gcc-linaro-5.4.1-2017.05-x86_64_aarch64-linux-gnu&#x2F;bin&#x2F;aarch64-linux-gnu-gcc。</li>
+<li>CMAKE_CXX_COMPILER：指定 C++ 编译器的路径。类似地，使用环境变量 $ENV{CROSS_COMPILE_ROOT} 和 $ENV{CROSS_COMPILE} 来构建完整的路径，例如 &#x2F;opt&#x2F;gcc-linaro-5.4.1-2017.05-x86_64_aarch64-linux-gnu&#x2F;bin&#x2F;aarch64-linux-gnu-g++。</li>
+<li>CMAKE_CXX_FLAGS_DEBUG：指定 C++ 编译器在调试模式下的编译选项。这里添加了 -O0 -Wall -ggdb，表示不进行优化、启用所有警告信息并生成调试信息。</li>
+</ul>
+<p>配置环境变量的示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SET(CMAKE_SYSTEM_NAME              Linux)</span><br><span class="line">SET(CMAKE_SYSTEM_PROCESSOR         aarch64)</span><br><span class="line">SET(CMAKE_SYSROOT                  <span class="variable">$ENV</span>&#123;CROSS_COMPILE_SYSROOT&#125;)</span><br><span class="line">SET(CMAKE_C_COMPILER               <span class="variable">$ENV</span>&#123;CROSS_COMPILE_ROOT&#125;/bin/<span class="variable">$ENV</span>&#123;CROSS_COMPILE&#125;gcc)</span><br><span class="line">SET(CMAKE_CXX_COMPILER             <span class="variable">$ENV</span>&#123;CROSS_COMPILE_ROOT&#125;/bin/<span class="variable">$ENV</span>&#123;CROSS_COMPILE&#125;g++)</span><br><span class="line">SET(CMAKE_CXX_FLAGS_DEBUG          <span class="string">&quot;<span class="variable">$&#123;CMAKE_CXX_FLAGS_DEBUG&#125;</span> -O0 -Wall -ggdb&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>所有架构的工具链配置均已完成，详情参见 toolchains 文件夹。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/jaywong001011/cmake_template/tree/main/toolchains">https://github.com/jaywong001011/cmake_template/tree/main/toolchains</a></p>
+<ol start="4">
+<li>编译过程</li>
+</ol>
+<p>每个架构都有对应的构建脚本，执行如下命令即可开始编译：</p>
 <ul>
 <li>编译aarch64</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /bin/bash build-aarch64.sh</span><br></pre></td></tr></table></figure>
-<p>效果如图<br><img src="/images/build-aarch64.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/bash build-aarch64.sh</span><br></pre></td></tr></table></figure>
 <ul>
 <li>编译loongarch64</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /bin/bash build-loongarch64.sh</span><br></pre></td></tr></table></figure>
-<p>效果如图<br><img src="/images/build-loongarch64.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/bash build-loongarch64.sh</span><br></pre></td></tr></table></figure>
 <ul>
 <li>编译mips64</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /bin/bash build-mips64.sh</span><br></pre></td></tr></table></figure>
-<p>效果如图<br><img src="/images/build-mips64.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/bash build-mips64.sh</span><br></pre></td></tr></table></figure>
+<p>效果如图：</p>
+<p><img src="/images/build-aarch64.png"><br><img src="/images/build-loongarch64.png"><br><img src="/images/build-mips64.png"></p>
 <ol start="5">
-<li>测试</li>
+<li>测试结果</li>
 </ol>
+<p>编译完成后，可以通过检查生成的二进制文件来验证编译是否成功。例如：</p>
 <ul>
 <li>测试aarch64</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ file built/linux/aarch64/Release/bin/exe-1.0.0.0 </span><br><span class="line">$ file built/linux/aarch64/Release/lib/libshared_lib.so.1.0.0.0</span><br></pre></td></tr></table></figure>
-<p>效果如图<br><img src="/images/test-aarch64.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">file built/linux/aarch64/Release/bin/exe-1.0.0.0 </span><br><span class="line">file built/linux/aarch64/Release/lib/libshared_lib.so.1.0.0.0</span><br></pre></td></tr></table></figure>
 <ul>
 <li>测试loongarch64</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ readelf -h built/linux/loongarch64/Release/bin/exe-1.0.0.0 | grep Machine </span><br><span class="line">$ readelf -h built/linux/loongarch64/Release/lib/libshared_lib.so.1.0.0.0| grep Machine</span><br></pre></td></tr></table></figure>
-<p>效果如图<br>0x102 是分配给 LoongArch 架构的 ELF 机器类型代码。<br><img src="/images/test-loongarch64.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">readelf -h built/linux/loongarch64/Release/bin/exe-1.0.0.0 | grep Machine </span><br><span class="line">readelf -h built/linux/loongarch64/Release/lib/libshared_lib.so.1.0.0.0| grep Machine</span><br></pre></td></tr></table></figure>
 <ul>
 <li>测试mips64</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ file built/linux/mips64/Release/bin/exe-1.0.0.0 </span><br><span class="line">$ file built/linux/mips64/Release/lib/libshared_lib.so.1.0.0.0</span><br></pre></td></tr></table></figure>
-<p>效果如图<br><img src="/images/test-mips64.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">file built/linux/mips64/Release/bin/exe-1.0.0.0 </span><br><span class="line">file built/linux/mips64/Release/lib/libshared_lib.so.1.0.0.0</span><br></pre></td></tr></table></figure>
+<p>效果如图：</p>
+<p><img src="/images/test-aarch64.png"><br>0x102 是分配给 LoongArch 架构的 ELF 机器类型代码。<br><img src="/images/test-loongarch64.png"><br><img src="/images/test-mips64.png"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/01/05/cmake-%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/" data-id="cm5jeid630000zkv04fsd8r9p" data-title="cmake 交叉编译" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/01/05/cmake-%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/" data-id="cm5jeid630000zkv04fsd8r9p" data-title="CMake 交叉编译实践：国产CPU，支持 aarch64、loongarch64 和 mips64 架构" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cmake/" rel="tag">cmake</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/" rel="tag">交叉编译</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%9B%BD%E4%BA%A7%E8%8A%AF%E7%89%87/" rel="tag">国产芯片</a></li></ul>
+
     </footer>
   </div>
   
@@ -205,9 +220,23 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmake/" rel="tag">cmake</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/" rel="tag">交叉编译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BD%E4%BA%A7%E8%8A%AF%E7%89%87/" rel="tag">国产芯片</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/cmake/" style="font-size: 10px;">cmake</a> <a href="/tags/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/" style="font-size: 10px;">交叉编译</a> <a href="/tags/%E5%9B%BD%E4%BA%A7%E8%8A%AF%E7%89%87/" style="font-size: 10px;">国产芯片</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
@@ -226,7 +255,7 @@
       <ul>
         
           <li>
-            <a href="/2025/01/05/cmake-%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/">cmake 交叉编译</a>
+            <a href="/2025/01/05/cmake-%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/">CMake 交叉编译实践：国产CPU，支持 aarch64、loongarch64 和 mips64 架构</a>
           </li>
         
           <li>
