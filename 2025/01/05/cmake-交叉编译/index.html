@@ -15,7 +15,7 @@
 
 <!--Author-->
 
-    <meta name="author" content="JayWong001011"/>
+    <meta name="author" content="Jay Wong"/>
 
 
 <!--Open Graph Title-->
@@ -169,7 +169,7 @@
 <li>克隆cmake工程</li>
 </ol>
 <p>本项目整合了多种架构的工具链，并提供了自动化构建脚本。你可以从以下地址克隆工程：</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/jaywong001011/cmake_template.git">GitHub: cmake_template</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/jaywongX/cmake_template.git">GitHub: cmake_template</a></p>
 <ol start="2">
 <li>交叉编译工具链下载</li>
 </ol>
@@ -198,7 +198,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SET(CMAKE_SYSTEM_NAME              Linux)</span><br><span class="line">SET(CMAKE_SYSTEM_PROCESSOR         aarch64)</span><br><span class="line">SET(CMAKE_SYSROOT                  <span class="variable">$ENV</span>&#123;CROSS_COMPILE_SYSROOT&#125;)</span><br><span class="line">SET(CMAKE_C_COMPILER               <span class="variable">$ENV</span>&#123;CROSS_COMPILE_ROOT&#125;/bin/<span class="variable">$ENV</span>&#123;CROSS_COMPILE&#125;gcc)</span><br><span class="line">SET(CMAKE_CXX_COMPILER             <span class="variable">$ENV</span>&#123;CROSS_COMPILE_ROOT&#125;/bin/<span class="variable">$ENV</span>&#123;CROSS_COMPILE&#125;g++)</span><br><span class="line">SET(CMAKE_CXX_FLAGS_DEBUG          <span class="string">&quot;<span class="variable">$&#123;CMAKE_CXX_FLAGS_DEBUG&#125;</span> -O0 -Wall -ggdb&quot;</span>)</span><br></pre></td></tr></table></figure>
 
 <p>所有架构的工具链配置均已完成，详情参见 toolchains 文件夹。</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/jaywong001011/cmake_template/tree/main/toolchains">https://github.com/jaywong001011/cmake_template/tree/main/toolchains</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/jaywongX/cmake_template/tree/main/toolchains">https://github.com/jaywongX/cmake_template/tree/main/toolchains</a></p>
 <ol start="4">
 <li>编译过程</li>
 </ol>
@@ -405,7 +405,7 @@
                 </ul>
                 <p class="copyright footer-author">
                     &copy; -2025 
-                    <a rel="external" class="copyright-link" href="" target="_blank">JayWong001011</a><br/>
+                    <a rel="external" class="copyright-link" href="" target="_blank">Jay Wong</a><br/>
                     Powered by <a rel="external" class="copyright-link" href="https://hexo.io/" target="_blank">Hexo</a>  
                     <span class="copyright-split">&nbsp;|&nbsp;&nbsp;</span>
                     Theme <a rel="external" class="copyright-link" href="https://github.com/luswdev/hexo-theme-clean.git" target="_blank">Clean</a>
