@@ -53,24 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(card);
     });
 
-    // 移动端菜单
-    const menuButton = document.querySelector('.mobile-menu-button');
-    const mobileMenu = document.querySelector('.mobile-menu');
-
-    menuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('active');
-        // 添加动画类
-        menuButton.classList.toggle('active');
-    });
-
-    // 点击菜单项后关闭菜单
-    mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-            menuButton.classList.remove('active');
-        });
-    });
-
     // 深色模式切换
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
     
