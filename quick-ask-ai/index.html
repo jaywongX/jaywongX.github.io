@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="icons/icon128.png">
+    <title>Quick Ask AI - Ask AI Assistants About Any Text</title>
+    <meta name="description" content="A browser extension that allows you to quickly ask AI assistants about any text you select on the web">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-links">
+                <a href="index.html">Quick Ask AI</a>
+                <a href="privacy-policy/index.html">Privacy Policy</a>
+                <a href="https://github.com/jaywongX/quick-ask-ai/issues">Report Issue</a>
+                <a href="https://github.com/jaywongX/quick-ask-ai">GitHub</a>
+                <div class="support-dropdown">
+                    <button class="support-btn">Support ▾</button>
+                    <div class="support-menu">
+                        <a href="https://ko-fi.com/jaywong" class="support-link">
+                            <span class="support-title">Ko-fi</span>
+                            <span class="support-desc">Support via Ko-fi</span>
+                        </a>
+                        <a href="https://afdian.com/a/jaywong" class="support-link">
+                            <span class="support-title">Afdian</span>
+                            <span class="support-desc">Support via Afdian (China)</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="language-switcher">
+                    <a href="index.html" class="active">EN</a>
+                    <span>|</span>
+                    <a href="index.zh.html">中文</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <img src="icons/icon128.png" alt="Quick Ask AI Logo" class="hero-logo">
+            <h1>Quick Ask AI</h1>
+            <p class="subtitle">Ask AI assistants about any text you select on the web</p>
+            <div class="cta-buttons">
+                <a href="" class="browser-link">
+                    <img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome.svg" alt="Chrome" width="24">
+                    <span>Chrome</span>
+                </a>
+                <a href="" class="browser-link">
+                    <img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/edge/edge.svg" alt="Edge" width="24">
+                    <span>Edge</span>
+                </a>
+                <a href="" class="browser-link">
+                    <img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/firefox/firefox.svg" alt="Firefox" width="24">
+                    <span>Firefox</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Usage Flow Section -->
+    <section class="usage-flow">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="flow-grid">
+                <div class="flow-item">
+                    <div class="flow-image">
+                        <img src="images/guide-1.png" alt="Step 1: Select text on any webpage" class="zoomable">
+                    </div>
+                    <div class="flow-desc">
+                        <span class="step-number">1</span>
+                        <h3>Select Text And Right-Click</h3>
+                        <p>Select any text on a webpage that you want to ask about, right-click to open the Quick Ask AI context menu</p>
+                    </div>
+                </div>
+                
+                <div class="flow-item">
+                    <div class="flow-image">
+                        <img src="images/guide-2.png" alt="Step 2: Right-click to open menu" class="zoomable">
+                    </div>
+                    <div class="flow-desc">
+                        <span class="step-number">2</span>
+                        <h3>Ask to AI</h3>
+                        <p>Jump to ai assistant website to ask ai</p>
+                    </div>
+                </div>
+                
+                <div class="flow-item">
+                    <div class="flow-image">
+                        <img src="images/guide-3.png" alt="Step 3: Choose AI assistant" class="zoomable">
+                    </div>
+                    <div class="flow-desc">
+                        <span class="step-number">3</span>
+                        <h3>Click on the plugin icon</h3>
+                        <p>Support to display all ai assistants, enable and disable, edit and delete,support reset data, feedback and donations</p>
+                    </div>
+                </div>
+                
+                <div class="flow-item">
+                    <div class="flow-image">
+                        <img src="images/guide-4.png" alt="Step 4: Select ask mode" class="zoomable">
+                    </div>
+                    <div class="flow-desc">
+                        <span class="step-number">4</span>
+                        <h3>Edit ai assistant</h3>
+                        <p>Click Edit ai Assistant, supports setting shortcut keys, Built-in access mode by default, Supports setting tab behavior</p>
+                    </div>
+                </div>
+                
+                <div class="flow-item">
+                    <div class="flow-image">
+                        <img src="images/guide-5.png" alt="Step 5: Text auto-input" class="zoomable">
+                    </div>
+                    <div class="flow-desc">
+                        <span class="step-number">5</span>
+                        <h3>Edit ai ask modes</h3>
+                        <p>Click Edit ai ask modes, supports adding custom modes, editing prompts, reordering modes, and deleting unused modes</p>
+                    </div>
+                </div>
+                
+                <div class="flow-item">
+                    <div class="flow-image">
+                        <img src="images/guide-6.png" alt="Step 6: Get answer" class="zoomable">
+                    </div>
+                    <div class="flow-desc">
+                        <span class="step-number">6</span>
+                        <h3>Change tab behavior</h3>
+                        <p>Click Change tab behavior, supports setting tab behavior</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Multiple AI Assistants</h3>
+                    <p>Support for ChatGPT, Google Gemini, DeepSeek, Copilot, Perplexity, Grok, Qianwen, ERNIE Bot, and Kimi.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Multiple Ask Modes</h3>
+                    <p>Question, Explain, Summarize, and Research modes for different needs.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Rich Customization</h3>
+                    <p>Edit assistants, customize prompts, set shortcuts, and configure tab behavior.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>User-Friendly</h3>
+                    <p>English and Chinese interface, simple right-click operation, automatic text input.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Start Section -->
+    <section class="use-cases">
+        <div class="container">
+            <h2>Quick Start</h2>
+            <div class="use-case-grid">
+                <div class="use-case-card">
+                    <div class="icon">1️⃣</div>
+                    <h3>Install Quick Ask AI</h3>
+                    <div class="browser-links">
+                        <a href="" class="browser-link">
+                            <img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome.svg" alt="Chrome" width="24">
+                            <span>Chrome</span>
+                        </a>
+                        <a href="" class="browser-link">
+                            <img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/edge/edge.svg" alt="Edge" width="24">
+                            <span>Edge</span>
+                        </a>
+                        <a href="" class="browser-link">
+                            <img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/firefox/firefox.svg" alt="Firefox" width="24">
+                            <span>Firefox</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="use-case-card">
+                    <div class="icon">2️⃣</div>
+                    <h3>Select Text & Right-Click</h3>
+                    <p>Select any text on a webpage and right-click to access Quick Ask AI menu</p>
+                </div>
+                
+                <div class="use-case-card">
+                    <div class="icon">3️⃣</div>
+                    <h3>Choose AI Assistant</h3>
+                    <p>Pick your preferred AI assistant and ask mode</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Usage Section -->
+    <section class="use-cases">
+        <div class="container">
+            <h2>Advanced Usage</h2>
+            <div class="use-case-grid">
+                <div class="use-case-card">
+                    <div class="icon">⚙️</div>
+                    <h3>Managing AI Assistants</h3>
+                    <ul>
+                        <li>Enable/disable assistants</li>
+                        <li>Add new assistants</li>
+                        <li>Edit existing assistants</li>
+                        <li>Reorder by dragging</li>
+                    </ul>
+                </div>
+                
+                <div class="use-case-card">
+                    <div class="icon">🎯</div>
+                    <h3>Customizing Ask Modes</h3>
+                    <ul>
+                        <li>Edit prompt templates</li>
+                        <li>Add custom modes</li>
+                        <li>Reorder modes</li>
+                        <li>Delete unused modes</li>
+                    </ul>
+                </div>
+                
+                <div class="use-case-card">
+                    <div class="icon">⌨️</div>
+                    <h3>Keyboard Shortcuts</h3>
+                    <ul>
+                        <li>Set up custom shortcuts</li>
+                        <li>Use modifier keys</li>
+                        <li>Quick access to features</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>© 2024 Quick Ask AI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal for image zoom -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
